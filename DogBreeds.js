@@ -125,10 +125,17 @@ const dogBreeds = {
 
 // console.log(dogBreeds.message.terrier);
 
+// Declares the counter to keep track of how many breeds with sub-breeds we have found
 let numOfBreedsWithSubBreed = 0;
+
+// Iterates through all the properties of dogBreeds.message
 for (const breedName in dogBreeds.message) {
+    // breedName is the key of the object. To get the value we use
+    // the square bracket syntax and assign it to the variable called breed
     let breed = dogBreeds.message[breedName];
+    // Check if the breed (which is an array) doesn't have a length of zero
     if (breed.length != 0) {
+        // Add 1 to the number of breeds with sub-breeds we have found
         numOfBreedsWithSubBreed++;
     }
 }
