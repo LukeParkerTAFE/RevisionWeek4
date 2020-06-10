@@ -63,3 +63,36 @@ let names = [
 let namesMatches = names.filter(name => ["a", "b", "c", "d"].includes(name[0].toLowerCase()));
 console.log(namesMatches);
 
+
+// Q4 - Jimmy is scared of the letter Q, write some code that takes in an array
+// of pet objects (name, age, owner) and tells Jimmy's parents if the array contains
+// any pets that have a name or owner with the letter Q. You must use a for..in loop for this.
+
+let pets = [
+    {
+        name: "Seb",
+        age: 3,
+        owner: "Timmy"
+    }, {
+        name: "Rex",
+        age: 6,
+        owner: "Luke"
+    }, {
+        name: "Walter",
+        age: 4,
+        owner: "Kay"
+    }
+]
+
+function findPetIncludingQ(pet) {
+    for (const key in pet) {
+        const element = pet[key].toString().toLowerCase();
+        if (element.includes("q")) {
+            return true;
+        }
+    }
+}
+
+let hasQ = pets.some(findPetIncludingQ);
+
+console.log(hasQ);
