@@ -83,12 +83,12 @@ function searchBooks(searchTerm) {
         return book.title.toLowerCase().includes(lowerSearchTerm) ||
             author.firstName.toLowerCase().includes(lowerSearchTerm) ||
             author.lastName.toLowerCase().includes(lowerSearchTerm);
-
     }
 
     return books.filter(termAppearsInBooksOrAuthor);
 }
 
+// This function won't always work for numbers. Find out why and see if you can fix it!
 function sortBooks(sortField) {
     function sortByField(book1, book2) {
         if (book1[sortField] > book2[sortField]) {
@@ -105,6 +105,6 @@ function sortBooks(sortField) {
         .map(book => book.title);
 }
 
-console.log(searchBooks("otte"));
+// console.log(searchBooks("otte"));
 
-// console.log(sortBooks("title"));
+console.log(sortBooks("yearOfPublication"));
