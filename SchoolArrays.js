@@ -257,9 +257,18 @@ function getStudentSchedule(studentId) {
     return schedule;
 }
 
-console.log(getStudentSchedule("c04407a1-9be9-46a6-960c-c462b994122d"))
+// console.log(getStudentSchedule("c04407a1-9be9-46a6-960c-c462b994122d"))
 
 // Q9
 function doesTeach(teacherId, studentId) {
+    let studClses = studentClasses.filter(sc => sc.studentId == studentId);
+    let studClsIds = studClses.map(sc => sc.classId);
+    
 
+    let teachClses = classes.filter(cls => cls.teacherId == teacherId);
+    let teachClsIds = teachClses.map(cls => cls.id);
+
+    return studClsIds.some(studClsId => teachClsIds.includes(studClsId));
 }
+
+console.log(doesTeach("948c3641-f95d-483b-8c59-b84c27041313", "ae025246-b36b-46cb-9de7-d52e46b4a6f7"));
